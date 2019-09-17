@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="ch">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="google-site-verification=4oU_jsazKvDA1EvXU8Duvdk0Ow1NBhxNL3N0BTtPVjM">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    }
+  };
+</script>
+
+  <meta name="description" content="第一个Python程序  ipython交互模式：（print是一个函数对象，作用是在终端打印出传入该函数的对象）  In [1]: print(&amp;quot;hello world&amp;quot;)   hello world    Python文件格式  打开sublime，新建一个文件，命名为hello.py，在文件的第一行写上：print(&amp;quot;hello world&amp;quot;), 保">
+<meta name="keywords" content="python, 入门, 基础, 概念">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python基础（2）——第一个python程序以及一些基本概念">
+<meta property="og:url" content="https://mirocle007.com/2019/09/17/Python基础（2）——第一个python程序以及一些基本概念/index.html">
+<meta property="og:site_name" content="Gantom&#39;s Blog">
+<meta property="og:description" content="第一个Python程序  ipython交互模式：（print是一个函数对象，作用是在终端打印出传入该函数的对象）  In [1]: print(&amp;quot;hello world&amp;quot;)   hello world    Python文件格式  打开sublime，新建一个文件，命名为hello.py，在文件的第一行写上：print(&amp;quot;hello world&amp;quot;), 保">
+<meta property="og:locale" content="ch">
+<meta property="og:updated_time" content="2019-09-17T12:31:41.606Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python基础（2）——第一个python程序以及一些基本概念">
+<meta name="twitter:description" content="第一个Python程序  ipython交互模式：（print是一个函数对象，作用是在终端打印出传入该函数的对象）  In [1]: print(&amp;quot;hello world&amp;quot;)   hello world    Python文件格式  打开sublime，新建一个文件，命名为hello.py，在文件的第一行写上：print(&amp;quot;hello world&amp;quot;), 保">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://mirocle007.com/2019/09/17/Python基础（2）——第一个python程序以及一些基本概念/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>Python基础（2）——第一个python程序以及一些基本概念 | Gantom's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="ch">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Gantom's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+
+  
+
+  <a href="https://github.com/mirocle007" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mirocle007.com/2019/09/17/Python基础（2）——第一个python程序以及一些基本概念/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gantom">
+      <meta itemprop="description" content="Gantom's personal blog">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gantom's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Python基础（2）——第一个python程序以及一些基本概念
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-09-17 20:29:23 / Modified: 20:31:41" itemprop="dateCreated datePublished" datetime="2019-09-17T20:29:23+08:00">2019-09-17</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python教程/" itemprop="url" rel="index"><span itemprop="name">Python教程</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+<li><p>第一个Python程序</p>
+<ul>
+<li>ipython交互模式：（print是一个函数对象，作用是在终端打印出传入该函数的对象）  <pre><font color="#008700">In [</font><font color="#8AE234"><b>1</b></font><font color="#008700">]: </font><font color="#008700"><b>print</b></font>(<font color="#AF5F00">&quot;hello world&quot;</font>)
+  hello world
+  </pre></li>
+<li>Python文件格式<br>  打开sublime，新建一个文件，命名为hello.py，在文件的第一行写上：<code>print(&quot;hello world&quot;)</code>, 保存。<br>  然后在该文件所在目录下打开终端，输入命令<code>python3 hello.py</code>，即在终端上打印出结果。</li>
+</ul>
+</li>
+<li><p>表达式和运算符</p>
+<ul>
+<li>运算符即常见的数学运算符：+, -, <em>, /, %(求余数), //(地板除), *</em>(次方)</li>
+<li>表达式（expression）由一个数字或数字和运算符组成，比如1+2，注意优先级</li>
+<li>括号分组子表达式<br>  用()可以将表达式分组，()内的表达式先进行运算</li>
+<li>混合类型自动升级（整型&lt;浮点型&lt;复数型）<br>  e.g.    1+2.14返回浮点数3.14</li>
+</ul>
+</li>
+<li><p>变量（variable）</p>
+<ul>
+<li>变量是用来绑定数据对象的标识符；</li>
+<li>变量的命名要求:<br> a. 变量名必须以字母或者下划线开头，后跟字母或下划线或数字；<br> b. 不能使用Python的关键字做变量名<pre><code>   - 合法的变量名示例：a  a1  b  bbb  _aaa  _Abcd  var  a1b2c2
+   - 不合法的变量名示例：1a  123  $ABC +a  -b  #ab  @ab
+- Python 的关键字：True, False, None, is, del, if, elif等</code></pre></li>
+</ul>
+</li>
+<li><p>Python核心数据类型</p>
+<ul>
+<li>数字（整型、浮点型、复数、布尔型）</li>
+<li>字符串</li>
+<li>列表</li>
+<li>元组</li>
+<li>字典</li>
+<li>集合</li>
+<li>字节串等等</li>
+</ul>
+</li>
+<li><p>语句</p>
+<ul>
+<li><p>赋值语句</p>
+<ul>
+<li>语法：<br>  变量名=表达式  或者<br>  变量名1=变量名2=表达式  或者<pre><code>变量名1，变量名2，...，=序列</code></pre></li>
+<li>作用：<pre><code>用于创建变量并将变量绑定（或关联）在一个对象（数据对象/函数/类等等）上</code></pre></li>
+<li>说明：<br>1、当变量不存在时，创建该变量同时绑定在这个对象上<br>2、当变量存在时，改变此变量的绑定的对象<br>3、一个变量只能绑定一个对象<br>4、两个变量可以同时绑定同一个对象</li>
+<li>示例：<br>  a=10<br>  b=20<br>  c=a+b<br>  a1=b1=c1=200<br>  x, y=100, 200</li>
+<li>复合赋值算术运算符<br>  y+=x                   等同于y=y+x<br>  y-=x                    等同于y=y-x<br>  y<em>=x                   等同于y=y</em>x<br>  y/=x                   等同于y=y/x<br>  y//=x                   等同于y=y//x<br>  y%=x                   等同于y=y%x<br>  y<strong>=x                   等同于y=y</strong>x</li>
+</ul>
+</li>
+<li><p>条件语句</p>
+<ul>
+<li>语法：<br> if    真值表达式：<br> &nbsp;&nbsp;&nbsp;&nbsp;语句块1…（前面四个空格，后面同）<br> elif    真值表达式：<br> &nbsp;&nbsp;&nbsp;&nbsp;语句块2…<br> elif    真值表达式：<br> &nbsp;&nbsp;&nbsp;&nbsp;语句块3…<br> …<br> else:<br>&nbsp;&nbsp;&nbsp;&nbsp;语句块4<ul>
+<li>作用：<br>   让程序根据条件选择性地执行某条语句或某些语句。</li>
+</ul>
+</li>
+<li>说明：<br>elif 子句可有1个或多个，也可以没有<br>else子句最多只能有一个，也可以没有（只能放在最后）</li>
+</ul>
+</li>
+<li><p>循环语句<br>  包括while语句以及for语句，后续再详细讲解。</p>
+</li>
+</ul>
+</li>
+<li><p>Python中关联/绑定/引用的含义</p>
+<ul>
+<li>在Python中，变量没有类型</li>
+<li>关联/绑定/引用都是指变量和一个对象的关联关系<br>  在交互模式下查看变量的绑定关系：  <pre><font color="#008700">In [</font><font color="#8AE234"><b>1</b></font><font color="#008700">]: </font>help(<font color="#AF5F00">&quot;__main__&quot;</font>)
+</pre>
+</li>
+</ul>
+</li>
+<li><p>python中的自动化内存管理<br> A=10000(先创建10000的数据对象，存入内存（RAM），创建一个变量A,将A和10000关联(绑定数据对象的地址）)<br>B=20000<br>A=A+B（数据对象没有被变量绑定时，自动释放）</p>
+</li>
+<li><p>is/is not 运算符</p>
+<ul>
+<li>作用：（实际判断的是id）<pre><code>判断两个变量是否绑定同一个对象，如果是同一个对象，返回True，        否则返回False</code></pre>  is not 与is作用相反</li>
+<li>语法：<br>  x is y（相同的数值可能为两个数据对象）</li>
+</ul>
+</li>
+<li><p>小整数对象池<br> cpython中整数-5至256永远存在于小整数池中，不会释放并且可以重复使用<br> 示例：</p>
+<pre><code>&lt;pre&gt;&lt;font color=&quot;#008700&quot;&gt;In [&lt;/font&gt;&lt;font color=&quot;#8AE234&quot;&gt;&lt;b&gt;18&lt;/b&gt;&lt;/font&gt;&lt;font color=&quot;#008700&quot;&gt;]: &lt;/font&gt;a=&lt;font color=&quot;#008700&quot;&gt;5&lt;/font&gt;
+&lt;font color=&quot;#008700&quot;&gt;In [&lt;/font&gt;&lt;font color=&quot;#8AE234&quot;&gt;&lt;b&gt;19&lt;/b&gt;&lt;/font&gt;&lt;font color=&quot;#008700&quot;&gt;]: &lt;/font&gt;b=&lt;font color=&quot;#008700&quot;&gt;5&lt;/font&gt;</code></pre><p> <font color="#008700">In [</font><font color="#8AE234"><b>20</b></font><font color="#008700">]: </font>a <font color="#AF00FF"><b>is</b></font> b<br> <font color="#870000">Out[</font><font color="#EF2929"><b>20</b></font><font color="#870000">]: </font>True<br> <font color="#008700">In [</font><font color="#8AE234"><b>21</b></font><font color="#008700">]: </font>a = <font color="#008700">1</font>+<font color="#008700">4</font><br> <font color="#008700">In [</font><font color="#8AE234"><b>22</b></font><font color="#008700">]: </font>b = <font color="#008700">2</font>+<font color="#008700">3</font><br> <font color="#008700">In [</font><font color="#8AE234"><b>23</b></font><font color="#008700">]: </font>a <font color="#AF00FF"><b>is</b></font> b<br> <font color="#870000">Out[</font><font color="#EF2929"><b>23</b></font><font color="#870000">]: </font>True<br> <font color="#008700">In [</font><font color="#8AE234"><b>24</b></font><font color="#008700">]: </font>a = <font color="#008700">10000</font>+<font color="#008700">1</font><br> <font color="#008700">In [</font><font color="#8AE234"><b>25</b></font><font color="#008700">]: </font>b = <font color="#008700">9999</font>+<font color="#008700">2</font><br> <font color="#008700">In [</font><font color="#8AE234"><b>26</b></font><font color="#008700">]: </font>a <font color="#AF00FF"><b>is</b></font> b<br> <font color="#870000">Out[</font><font color="#EF2929"><b>26</b></font><font color="#870000">]: </font>False<br> <font color="#008700">In [</font><font color="#8AE234"><b>27</b></font><font color="#008700">]: </font>a = <font color="#008700">10000</font><br> <font color="#008700">In [</font><font color="#8AE234"><b>28</b></font><font color="#008700">]: </font>b = <font color="#008700">10000</font><br> <font color="#008700">In [</font><font color="#8AE234"><b>29</b></font><font color="#008700">]: </font>a <font color="#AF00FF"><b>is</b></font> b<br> <font color="#870000">Out[</font><font color="#EF2929"><b>29</b></font><font color="#870000">]: </font>False<br> </p>
+</li>
+<li><p>判断两个变量是否绑定相同对象的方法</p>
+<ul>
+<li>使用is, 如第9点例子</li>
+<li>使用id函数<pre><code>&lt;pre&gt;&lt;font color=&quot;#008700&quot;&gt;In [&lt;/font&gt;&lt;font color=&quot;#8AE234&quot;&gt;&lt;b&gt;35&lt;/b&gt;&lt;/font&gt;&lt;font color=&quot;#008700&quot;&gt;]: &lt;/font&gt;a=&lt;font color=&quot;#008700&quot;&gt;1000&lt;/font&gt;</code></pre>  <font color="#008700">In [</font><font color="#8AE234"><b>36</b></font><font color="#008700">]: </font>b=<font color="#008700">1000</font><br>  <font color="#008700">In [</font><font color="#8AE234"><b>37</b></font><font color="#008700">]: </font>a <font color="#AF00FF"><b>is</b></font> b<br>  <font color="#870000">Out[</font><font color="#EF2929"><b>37</b></font><font color="#870000">]: </font>False<br>  <font color="#008700">In [</font><font color="#8AE234"><b>38</b></font><font color="#008700">]: id</font>(a) == <font color="#008700">id</font>(b)<br>  <font color="#870000">Out[</font><font color="#EF2929"><b>38</b></font><font color="#870000">]: </font>False<br>  <font color="#008700">In [</font><font color="#8AE234"><b>39</b></font><font color="#008700">]: </font>e=<font color="#008700">3</font><br>  <font color="#008700">In [</font><font color="#8AE234"><b>40</b></font><font color="#008700">]: </font>d=<font color="#008700">3</font><br>  <font color="#008700">In [</font><font color="#8AE234"><b>41</b></font><font color="#008700">]: </font>e <font color="#AF00FF"><b>is</b></font> d<br>  <font color="#870000">Out[</font><font color="#EF2929"><b>41</b></font><font color="#870000">]: </font>True<br>  <font color="#008700">In [</font><font color="#8AE234"><b>42</b></font><font color="#008700">]: id</font>(e) == <font color="#008700">id</font>(d)<br>  <font color="#870000">Out[</font><font color="#EF2929"><b>42</b></font><font color="#870000">]: </font>True</li>
+</ul>
+</li>
+<li><p>删除变量</p>
+<ul>
+<li>作用：用于删除变量，同时删除与对象的关联关系。如果可能则释放对象。</li>
+<li>语法： del 变量名</li>
+<li>Python的自动化内存管理和引用计数（reference count）<br>每个对象都会记录有几个变量引用自身，当引用的数量为0时，则对象被销毁，此种自动化内存管理的方式叫引用计数</li>
+</ul>
+</li>
+<li><p>练习题</p>
+<ul>
+<li>用交互模式求：<br>  1、一个商店卖西瓜，7元一个，你带20元能买几个西瓜，找零多少钱？<br>  2、一个学生毕业的薪资为10000元，每年涨20%，十年后他的薪资是多少？</li>
+<li>指定一个圆的半径r为3cm，<br>  1、计算出圆的周长是多少厘米？<br>  2、计算圆的面积是多少平方厘米？（要求用变量代替3cm和圆周率3.1415926</li>
+<li>已知有两个变量：<br>  a绑定10000<br>  b绑定20000<br>  问：在不创建任何新对象的情况下，如何让a和b交换绑定的对象？</li>
+<li>从凌晨0:0:0计时，到现在已经过了63320秒，请问现在是几时，几分，几秒？写程序打印出现在的时间<br>提示：可以用地板除和求和实现</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/python-入门-基础-概念/" rel="tag"># python, 入门, 基础, 概念</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/17/Python基础（1）——简介、安装及运行/" rel="next" title="Python基础（1）——简介、安装及运行">
+                <i class="fa fa-chevron-left"></i> Python基础（1）——简介、安装及运行
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/17/Python基础（3）/" rel="prev" title="Python基础（3）">
+                Python基础（3） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+  <p class="site-author-name" itemprop="name">Gantom</p>
+  <div class="site-description motion-element" itemprop="description">Gantom's personal blog</div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+        
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span>
+        
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/mirocle007" title="GitHub &rarr; https://github.com/mirocle007" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:gantom@foxmail.com" title="E-Mail &rarr; mailto:gantom@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+
+          
+          
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gantom</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+  
+  
+  <script size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
