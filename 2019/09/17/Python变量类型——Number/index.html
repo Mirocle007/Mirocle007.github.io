@@ -222,8 +222,28 @@
     
 
     
+      
+    
 
     <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
 
   </li>
         
@@ -238,8 +258,10 @@
     
 
     
+      
+    
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">13</span></a>
 
   </li>
 
@@ -428,7 +450,7 @@
 </tbody></table>
 <blockquote>
 <p>可以使用 type 函数查看变量的类型, 如上面的例子:</p>
-<figure class="highlight ipython"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&gt; In [<span class="number">50</span>]: a</span><br><span class="line">&gt; Out[<span class="number">50</span>]: <span class="number">10</span></span><br><span class="line">&gt;</span><br><span class="line">&gt; In [<span class="number">51</span>]: type(a)</span><br><span class="line">&gt; Out[<span class="number">51</span>]: int</span><br><span class="line">&gt;</span><br><span class="line">&gt; In [<span class="number">52</span>]: b</span><br><span class="line">&gt; Out[<span class="number">52</span>]: <span class="number">10.0</span></span><br><span class="line">&gt;</span><br><span class="line">&gt; In [<span class="number">53</span>]: type(b)</span><br><span class="line">&gt; Out[<span class="number">53</span>]: float</span><br><span class="line">&gt;</span><br><span class="line">&gt; In [<span class="number">54</span>]: c = <span class="number">2.5e2</span></span><br><span class="line">&gt;</span><br><span class="line">&gt; In [<span class="number">55</span>]: type(c)</span><br><span class="line">&gt; Out[<span class="number">55</span>]: float</span><br><span class="line">&gt;</span><br><span class="line">&gt; In [<span class="number">56</span>]: d = <span class="number">10</span> + <span class="number">0j</span></span><br><span class="line">&gt;</span><br><span class="line">&gt; In [<span class="number">57</span>]: type(d)</span><br><span class="line">&gt; Out[<span class="number">57</span>]: complex</span><br><span class="line">&gt;</span><br><span class="line">&gt; In [<span class="number">58</span>]: e = complex(<span class="number">10</span>, <span class="number">0</span>)</span><br><span class="line">&gt;</span><br><span class="line">&gt; In [<span class="number">59</span>]: type(e)</span><br><span class="line">&gt; Out[<span class="number">59</span>]: complex</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&gt; In [50]: a</span><br><span class="line">&gt; Out[50]: 10</span><br><span class="line">&gt;</span><br><span class="line">&gt; In [51]: type(a)</span><br><span class="line">&gt; Out[51]: int</span><br><span class="line">&gt;</span><br><span class="line">&gt; In [52]: b</span><br><span class="line">&gt; Out[52]: 10.0</span><br><span class="line">&gt;</span><br><span class="line">&gt; In [53]: type(b)</span><br><span class="line">&gt; Out[53]: float</span><br><span class="line">&gt;</span><br><span class="line">&gt; In [54]: c = 2.5e2</span><br><span class="line">&gt;</span><br><span class="line">&gt; In [55]: type(c)</span><br><span class="line">&gt; Out[55]: float</span><br><span class="line">&gt;</span><br><span class="line">&gt; In [56]: d = 10 + 0j</span><br><span class="line">&gt;</span><br><span class="line">&gt; In [57]: type(d)</span><br><span class="line">&gt; Out[57]: complex</span><br><span class="line">&gt;</span><br><span class="line">&gt; In [58]: e = complex(10, 0)</span><br><span class="line">&gt;</span><br><span class="line">&gt; In [59]: type(e)</span><br><span class="line">&gt; Out[59]: complex</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <br>
 
@@ -500,7 +522,7 @@
 </tbody></table>
 <blockquote>
 <p>对于具体的函数，在ipython中可使用help函数来查看其文档, 比如:</p>
-<figure class="highlight ipython"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&gt; In [<span class="number">60</span>]: help(int)</span><br><span class="line">&gt;</span><br><span class="line">&gt; Help on <span class="class"><span class="keyword">class</span> <span class="title">int</span> <span class="title">in</span> <span class="title">module</span> <span class="title">builtins</span>:</span></span><br><span class="line">&gt; <span class="class"><span class="keyword">class</span> <span class="title">int</span><span class="params">(object)</span></span></span><br><span class="line"><span class="class">&gt;  |  <span class="title">int</span><span class="params">(x=<span class="number">0</span>)</span> -&gt; integer</span></span><br><span class="line"><span class="class">&gt;  |  int(x, base=10) -&gt; integer</span></span><br><span class="line"><span class="class">&gt;  |</span></span><br><span class="line"><span class="class">&gt;  |  Convert a number or string to an integer, or return 0 if no arguments</span></span><br><span class="line"><span class="class">&gt;  |  are given.  If x is a number, return x.__int__().  For floating point</span></span><br><span class="line"><span class="class">&gt;  |  numbers, this truncates towards zero.</span></span><br><span class="line"><span class="class">&gt;  |</span></span><br><span class="line"><span class="class">&gt;  |  If x is not a number or if base is given, then x must be a string,</span></span><br><span class="line"><span class="class">&gt;  |  bytes, or bytearray instance representing an integer literal in the</span></span><br><span class="line"><span class="class">&gt;  |  given base.  The literal can be preceded by '+' or '-' and be surrounded</span></span><br><span class="line"><span class="class">&gt;  |  by whitespace.  The base defaults to 10.  Valid bases are 0 and 2-36.</span></span><br><span class="line"><span class="class">&gt;  |  Base 0 means to interpret the base from the string as an integer literal.</span></span><br><span class="line"><span class="class">&gt;  |  &gt;&gt;&gt; int('0b100', base=0)</span></span><br><span class="line"><span class="class">&gt;  |  4</span></span><br><span class="line"><span class="class">&gt;  |</span></span><br><span class="line"><span class="class">&gt;  |  Methods defined here:</span></span><br><span class="line">&gt;  |</span><br><span class="line">&gt;  |  __abs__(self, /)</span><br><span class="line">&gt;  |      abs(self)</span><br><span class="line">&gt;  |</span><br><span class="line">&gt;  |  __add__(self, value, /)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&gt; In [60]: help(int)</span><br><span class="line">&gt;</span><br><span class="line">&gt; Help on class int in module builtins:</span><br><span class="line">&gt; class int(object)</span><br><span class="line">&gt;  |  int(x=0) -&gt; integer</span><br><span class="line">&gt;  |  int(x, base=10) -&gt; integer</span><br><span class="line">&gt;  |</span><br><span class="line">&gt;  |  Convert a number or string to an integer, or return 0 if no arguments</span><br><span class="line">&gt;  |  are given.  If x is a number, return x.__int__().  For floating point</span><br><span class="line">&gt;  |  numbers, this truncates towards zero.</span><br><span class="line">&gt;  |</span><br><span class="line">&gt;  |  If x is not a number or if base is given, then x must be a string,</span><br><span class="line">&gt;  |  bytes, or bytearray instance representing an integer literal in the</span><br><span class="line">&gt;  |  given base.  The literal can be preceded by &apos;+&apos; or &apos;-&apos; and be surrounded</span><br><span class="line">&gt;  |  by whitespace.  The base defaults to 10.  Valid bases are 0 and 2-36.</span><br><span class="line">&gt;  |  Base 0 means to interpret the base from the string as an integer literal.</span><br><span class="line">&gt;  |  &gt;&gt;&gt; int(&apos;0b100&apos;, base=0)</span><br><span class="line">&gt;  |  4</span><br><span class="line">&gt;  |</span><br><span class="line">&gt;  |  Methods defined here:</span><br><span class="line">&gt;  |</span><br><span class="line">&gt;  |  __abs__(self, /)</span><br><span class="line">&gt;  |      abs(self)</span><br><span class="line">&gt;  |</span><br><span class="line">&gt;  |  __add__(self, value, /)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 
       
@@ -554,6 +576,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/25/cuda-10-1下使用tensorflow-gpu-1-4报错解决办法/" rel="prev" title="cuda 10.1下使用tensorflow-gpu 1.4报错解决办法">
+                cuda 10.1下使用tensorflow-gpu 1.4报错解决办法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -623,7 +649,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -642,7 +668,9 @@
         
           
         
-        <span class="site-state-item-count">3</span>
+          
+        
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span>
         
       </div>
@@ -679,7 +707,7 @@
         
           
         
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">tags</span>
         
       </div>
