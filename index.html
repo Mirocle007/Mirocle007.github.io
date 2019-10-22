@@ -261,7 +261,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">13</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">14</span></a>
 
   </li>
 
@@ -300,6 +300,191 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mirocle007.com/2019/10/22/pytorch1-2-0下使用目标检测模型训练报错-RuntimeError-received-0-items-of-ancdata-解决办法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gantom">
+      <meta itemprop="description" content="Gantom's personal blog">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gantom's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/10/22/pytorch1-2-0下使用目标检测模型训练报错-RuntimeError-received-0-items-of-ancdata-解决办法/" class="post-title-link" itemprop="url">pytorch1.2.0下使用目标检测模型训练报错'RuntimeError: received 0 items of ancdata'解决办法</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-10-22 21:57:11 / Modified: 22:09:23" itemprop="dateCreated datePublished" datetime="2019-10-22T21:57:11+08:00">2019-10-22</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Bug/" itemprop="url" rel="index"><span itemprop="name">Bug</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="pytorch1-2-0下使用目标检测模型训练报错”RuntimeError-received-0-items-of-ancdata”解决办法"><a href="#pytorch1-2-0下使用目标检测模型训练报错”RuntimeError-received-0-items-of-ancdata”解决办法" class="headerlink" title="pytorch1.2.0下使用目标检测模型训练报错”RuntimeError: received 0 items of ancdata”解决办法"></a>pytorch1.2.0下使用目标检测模型训练报错”RuntimeError: received 0 items of ancdata”解决办法</h2><br>
+
+<ul>
+<li><strong>报错信息:</strong><br><br>  <strong>RuntimeError: received 0 items of ancdata</strong></li>
+</ul>
+<br>
+
+<ul>
+<li><strong>报错原因:</strong><br><br>  报错可能是因为文件描述器共享策略达到了峰值(leaking FDs)</li>
+</ul>
+<br>
+
+<ul>
+<li><p><strong>解决办法一:</strong><br><br>  设置加载数据的 <code>num_workers=0</code>,<br>  参考: <a href="https://github.com/fastai/fastai/issues/23" target="_blank" rel="noopener">https://github.com/fastai/fastai/issues/23</a></p>
+</li>
+<li><p><strong>解决办法二:</strong><br><br>在导入torch后进行如下设置:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.multiprocessing.set_sharing_strategy(<span class="string">'file_system'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>参考: <a href="https://github.com/pytorch/pytorch/issues/973" target="_blank" rel="noopener">https://github.com/pytorch/pytorch/issues/973</a></p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -2511,292 +2696,6 @@ end: 输出完毕吧后在末尾自动追加一个字符串，默认为\n</code>
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://mirocle007.com/2019/09/17/Ubuntu终端常用命令/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Gantom">
-      <meta itemprop="description" content="Gantom's personal blog">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gantom's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/09/17/Ubuntu终端常用命令/" class="post-title-link" itemprop="url">Ubuntu终端常用命令</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-09-17 20:11:12 / Modified: 20:14:03" itemprop="dateCreated datePublished" datetime="2019-09-17T20:11:12+08:00">2019-09-17</time>
-            </span>
-          
-
-          
-            
-
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>使用Ubuntu系统时， 经常需要用到各种命令，本着学习与分享的原则，对部分常见命令进行汇总如下。</p>
-<ol>
-<li><p><code>clear</code><br> 作用：清屏，与快捷键Ctrl+L相同</p>
-</li>
-<li><p><code>pwd</code><br> 作用：用于显示当前的工作路径位置（当前文件夹）</p>
-</li>
-<li><p><code>ls</code><br> 作用：显示文件或者文件夹的内容<br> 格式：ls [选项]  [文件夹名或文件名]<br> 常用选项：</p>
-<ul>
-<li><p>-l 列表显示文件的详细信息</p>
-</li>
-<li><p>-a 显示全部文件/文件夹（正常不会显示隐藏文件，含点（.）开头的文件为隐藏文件)</p>
-<p>说明：ls -l -a或者ls -la或者ls -al都可以同时使用， 结果中rwx分别表示：读、写、执行</p>
-</li>
-</ul>
-</li>
-<li><p><code>cd</code><br> 作用：改变当前工作路径（进入某个目录）<br> 格式：cd [路径]<br> 说明：特殊地， 部分路径有以下含义：</p>
-<ul>
-<li>cd  /  #进入根目录</li>
-<li>cd  #进入home目录下的对应用户目录</li>
-<li>cd . .   #进入上一级目录</li>
-<li>cd ~(波浪号）#与cd相同</li>
-<li>cd -(减号）#切换到进入这个文件夹之前的文件夹（上一步）</li>
-</ul>
-</li>
-<li><p><code>mkdir</code><br> 作用：创建一个或多个文件夹<br> 格式：</p>
-<ul>
-<li><p>mkdir 文件夹名1 文件夹名2（在当前路径下创建文件夹，一个或多个）</p>
-</li>
-<li><p>mkdir -p  相对路径或者绝对路径（逐级创建）</p>
-<p>常用选项： -p 如果是中间的文件夹不存在,则逐级创建所有文件夹</p>
-</li>
-</ul>
-</li>
-<li><p><code>rmdir</code><br> 作用：删除一个或多个文件夹（文件夹内必须为空）<br> 格式：rmdir [选项] 文件夹名<br> 常用选项：  -p 如果是中间文件夹也为空（删除了要删除的子文件夹后），则逐级删除中间文件夹</p>
-</li>
-<li><p><code>tree</code><br> 作用：显示目录树<br> 格式：tree 或者 tree 文件路径<br> 说明：如果显示还没安装，可以尝试使用sudo apt  install tree进行安装</p>
-</li>
-<li><p><code>touch</code><br> 作用：</p>
-<ul>
-<li><p>创建新的文件（不创建文件夹）</p>
-</li>
-<li><p>如果文件已经存在，则更新文件的时间</p>
-<p>格式：touch 文件路径<br>说明：特别地， touch * 表示更新所有文件</p>
-</li>
-</ul>
-</li>
-<li><p><code>rm</code><br> 作用：删除文件或者文件夹<br> 格式：rm [选项] 文件/文件夹<br>  常用选项：</p>
-<ul>
-<li>-r   #递归删除文件夹内的文件和文件夹（文件夹里面有东西时）（可与下面两个结合）</li>
-<li>-i  ＃删除前给出提示（y代表yes，n代表no)<ul>
-<li>-f   #强制删除，不给任何提示</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><code>--help</code><br>作用：查看对应命令的帮助信息<br>格式：命令名 –help</p>
-</li>
-<li><p><code>man</code><br>作用：命令帮助，查看命令所对应的帮助文档（手册）<br>格式：man Linux/Unix命令名</p>
-</li>
-<li><p><code>subl</code><br>作用：打开sublime text 文本编辑器<br>说明：要先安装sublime，可以按照官网的操作进行安装</p>
-</li>
-<li><p><code>cat</code><br>作用：    将文件内容作为标准输出打印到终端<br>格式：cat 文件名1 [文件名2]</p>
-</li>
-<li><p><code>more</code><br>作用：分页显示文本文件的内容<br>格式：more 文件名1 [文件名2]</p>
-</li>
-<li><p><code>cp</code><br>作用：复制文件或者文件夹<br>格式：cp [选项] 源文件或文件夹 目标文件或者文件夹<br>常用选项： -a 复制文件夹中的全部内容</p>
-</li>
-<li><p><code>mv</code><br>作用：文件搬移或者重命名<br>格式：mv 源文件或者文件夹 目标文件或者文件夹</p>
-</li>
-<li><p><code>find</code><br>作用：根据文件名等信息查找指定的文件<br>格式：find 路径 -name “文件名“</p>
-</li>
-<li><p><code>grep</code><br>作用：查找文件中相应的内容，以及文本信息<br>格式：grep “内容”【选项】  文件名或路径<br>常用选项：</p>
-<ul>
-<li>-n 显示行号<ul>
-<li>-r/-R 递归搜索文件夹内的文件(两个可以结合使用）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><code>gzip</code><br>作用：用zip压缩算法对文件进行压缩，生成压缩后的文件（替换原来的文件）<br>格式：gzip 文件名</p>
-</li>
-<li><p><code>gunzip</code><br>作用：对用gzip压缩过的文件进行解压（替换原来的文件）<br>格式：gunzip 文件名</p>
-</li>
-<li><p><code>tar</code><br>作用:对文件或文件夹进行打包和解包的操作<br>格式：tar [选项] 文件名 [文件名或路径]<br>常用选项：</p>
-<ul>
-<li>-c 创建包</li>
-<li>-x 解包</li>
-<li>-v 显示操作的文件细节</li>
-<li>-z 用gzip、gunzip对包进行压缩和解压缩</li>
-<li>-f 文件名 正在操作的文件名</li>
-<li>-c 路径 改变解压缩路径（只对解包有效）</li>
-</ul>
-<p>举例：</p>
-<ul>
-<li>tar -czvf  hello.tar.gz  linux/hello   #将linux/hello打包并压缩为hello.tar.gz</li>
-<li>tar -xzvf linux/hello.tar.gz  #将hello.tar.gz  解包</li>
-</ul>
-</li>
-<li><p><code>sudo</code><br>作用：用超级用户权限来执行这些命令<br>格式：</p>
-<ul>
-<li>sudo 命令</li>
-<li>sudo -i 表示获取超级用户root权限（退出用<code>exit</code>或者<code>Ctrl+D</code>）</li>
-</ul>
-</li>
-<li><p><code>chmod</code><br>作用：修改文件权限(有权限才能修改）<br>格式：chmod 权限 文件名、文件夹名<br>权限表示：</p>
-<ul>
-<li>u 用户（属主）</li>
-<li>g 同组用户</li>
-<li>o 其他用户</li>
-<li>a 所有用户</li>
-<li>+添加权限</li>
-<li>-删除权限</li>
-</ul>
-<p>举例：</p>
-<ul>
-<li>chmod u+r a.txt  # 增加当前用户对a.txt的读权限</li>
-<li>chmod o-rwx a.txt  # 删除其它用户对a.txt的读写和执行的权限</li>
-<li>chmod g+rw a.txt  # 增加同组用户对a.txt的读和写权限</li>
-</ul>
-</li>
-</ol>
-<p>注意：操作带有特殊符号的路径的方法（比如空格）， 用两个双引号（”“）把路径括起来</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2844,7 +2743,7 @@ end: 输出完毕吧后在末尾自动追加一个字符串，默认为\n</code>
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -2902,7 +2801,9 @@ end: 输出完毕吧后在末尾自动追加一个字符串，默认为\n</code>
         
           
         
-        <span class="site-state-item-count">12</span>
+          
+        
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">tags</span>
         
       </div>
