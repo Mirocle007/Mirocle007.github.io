@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="ch">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="google-site-verification=4oU_jsazKvDA1EvXU8Duvdk0Ow1NBhxNL3N0BTtPVjM">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    }
+  };
+</script>
+
+  <meta name="description" content="1. 简介Python 字符串类型用于存储字符串变量，字符串一般使用单引号 ‘ 或者双引号 “ 来表示。如: 12345678s1 = &apos;hello, world&apos;s2 = &quot;hello, world&quot;s3 = &apos;&apos;&apos;hello, world&apos;&apos;&apos;s4 = &quot;&quot;&quot;hello, world&quot;&quot;&quot;print(s1)  # 4种方式等效， 多行字符串会用到三引号的情况print(s2)print(s3)">
+<meta name="keywords" content="python, 字符串， 变量类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python变量类型——字符串">
+<meta property="og:url" content="https://mirocle007.com/2019/10/26/python变量类型——字符串/index.html">
+<meta property="og:site_name" content="Gantom&#39;s Blog">
+<meta property="og:description" content="1. 简介Python 字符串类型用于存储字符串变量，字符串一般使用单引号 ‘ 或者双引号 “ 来表示。如: 12345678s1 = &apos;hello, world&apos;s2 = &quot;hello, world&quot;s3 = &apos;&apos;&apos;hello, world&apos;&apos;&apos;s4 = &quot;&quot;&quot;hello, world&quot;&quot;&quot;print(s1)  # 4种方式等效， 多行字符串会用到三引号的情况print(s2)print(s3)">
+<meta property="og:locale" content="ch">
+<meta property="og:updated_time" content="2019-10-26T08:57:54.289Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python变量类型——字符串">
+<meta name="twitter:description" content="1. 简介Python 字符串类型用于存储字符串变量，字符串一般使用单引号 ‘ 或者双引号 “ 来表示。如: 12345678s1 = &apos;hello, world&apos;s2 = &quot;hello, world&quot;s3 = &apos;&apos;&apos;hello, world&apos;&apos;&apos;s4 = &quot;&quot;&quot;hello, world&quot;&quot;&quot;print(s1)  # 4种方式等效， 多行字符串会用到三引号的情况print(s2)print(s3)">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://mirocle007.com/2019/10/26/python变量类型——字符串/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>python变量类型——字符串 | Gantom's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="ch">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Gantom's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">15</span></a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+
+  
+
+  <a href="https://github.com/mirocle007" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mirocle007.com/2019/10/26/python变量类型——字符串/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gantom">
+      <meta itemprop="description" content="Gantom's personal blog">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gantom's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">python变量类型——字符串
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-10-26 16:54:16 / Modified: 16:57:54" itemprop="dateCreated datePublished" datetime="2019-10-26T16:54:16+08:00">2019-10-26</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python教程/" itemprop="url" rel="index"><span itemprop="name">Python教程</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h3><p>Python 字符串类型用于存储字符串变量，字符串一般使用单引号 <code>‘</code> 或者双引号 <code>“</code> 来表示。如:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">s1 = <span class="string">'hello, world'</span></span><br><span class="line">s2 = <span class="string">"hello, world"</span></span><br><span class="line">s3 = <span class="string">'''hello, world'''</span></span><br><span class="line">s4 = <span class="string">"""hello, world"""</span></span><br><span class="line">print(s1)  <span class="comment"># 4种方式等效， 多行字符串会用到三引号的情况</span></span><br><span class="line">print(s2)</span><br><span class="line">print(s3)</span><br><span class="line">print(s4)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>注意， 单引号字符串中只能使用双引号作为引号， 而不能使用单引号， 否则python会将第二个单引号当成字符串的结束， 从而报错， 反之亦然。</strong></li>
+<li>如果一定要用， 则需使用转义字符 <code>\</code></li>
+</ul>
+<br>
+
+<h3 id="2-字符串变量的运算"><a href="#2-字符串变量的运算" class="headerlink" title="2. 字符串变量的运算"></a>2. 字符串变量的运算</h3><br>
+
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>作用</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>字符串拼接</td>
+<td><code>x=&quot;ABC&quot;+&#39;DEF;y=&quot;123&quot;;z=x+y</code></td>
+</tr>
+<tr>
+<td>+=</td>
+<td>复合赋值, y += “a” 相当于 y = y + “a”</td>
+<td><code>z += &quot;asdfg&quot;</code></td>
+</tr>
+<tr>
+<td>*</td>
+<td>生成重复的字符串</td>
+<td><code>z = z * 3</code></td>
+</tr>
+<tr>
+<td>*=</td>
+<td>复合赋值， y*=2 相当于y = y * 2</td>
+<td><code>z *= 3</code></td>
+</tr>
+</tbody></table>
+<br>
+
+<h3 id="3-字符串变量的比较"><a href="#3-字符串变量的比较" class="headerlink" title="3. 字符串变量的比较"></a>3. 字符串变量的比较</h3><br>
+
+<blockquote>
+<p><strong>字符串比较， 比较的是ASCII码</strong><br>简单举例如下：</p>
+<figure class="highlight ipython"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&gt; In [<span class="number">12</span>]: <span class="string">"A"</span> == <span class="string">'A'</span></span><br><span class="line">&gt;Out[<span class="number">12</span>]: <span class="literal">True</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;In [<span class="number">13</span>]: <span class="string">'A'</span> &lt; <span class="string">'B'</span></span><br><span class="line">&gt;Out[<span class="number">13</span>]: <span class="literal">True</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;In [<span class="number">14</span>]: <span class="string">"ABC"</span> &gt; <span class="string">"ABB"</span>  <span class="comment"># 从左往右，分别比较，直到第一个不相同的，完成比较</span></span><br><span class="line">&gt;Out[<span class="number">14</span>]: <span class="literal">True</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;In [<span class="number">16</span>]: <span class="string">"ADC"</span> &lt; <span class="string">"ABC"</span></span><br><span class="line">&gt;Out[<span class="number">16</span>]: <span class="literal">False</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;In [<span class="number">17</span>]: <span class="string">"AD"</span> &gt; <span class="string">"ABC"</span></span><br><span class="line">&gt;Out[<span class="number">17</span>]: <span class="literal">True</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;In [<span class="number">19</span>]: <span class="string">"AB"</span> &gt; <span class="string">"ABC"</span>  <span class="comment"># 空值的ASCII码最小</span></span><br><span class="line">&gt;Out[<span class="number">19</span>]: <span class="literal">False</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;In [<span class="number">20</span>]: <span class="string">"ABCD"</span> != <span class="string">"DCBA"</span></span><br><span class="line">&gt;Out[<span class="number">20</span>]: <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<br>
+
+<h3 id="4-字符串的索引和切片"><a href="#4-字符串的索引和切片" class="headerlink" title="4. 字符串的索引和切片"></a>4. 字符串的索引和切片</h3><br>
+
+<ul>
+<li>索引</li>
+</ul>
+<ol>
+<li>定义： 简单地说就是对字符串的单个元素进行取值。</li>
+<li>语法： 字符串[整数表达式]</li>
+<li>说明：<ul>
+<li>Python序列都可以用索引（Index）来访问序列中的对象</li>
+<li>Python序列正向的索引从0开始，第二个索引为1，最后一个索引为len(s)-1</li>
+<li>索引从-1开始，-1代表最后一个，-2代表倒数第二个，以此类推，第一个是-len(s)</li>
+</ul>
+</li>
+<li>举例<figure class="highlight ipython"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">25</span>]: s = <span class="string">"So beatiful a girl."</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">26</span>]: s[<span class="number">0</span>]</span><br><span class="line">Out[<span class="number">26</span>]: <span class="string">'S'</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">27</span>]: s[<span class="number">-1</span>]</span><br><span class="line">Out[<span class="number">27</span>]: <span class="string">'.'</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<br>
+
+<ul>
+<li>切片</li>
+</ul>
+<ol>
+<li><p>定义： 简单地说就是对字符串的多个元素进行取值。</p>
+</li>
+<li><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">   注意： 小括号内的可以省略</span><br><span class="line"></span><br><span class="line">3. 说明：</span><br><span class="line">    *  开始索引是切片开始切下的位置，0代表第一个元素，-1代表最后一个元素</span><br><span class="line">    * 结束索引是切片的终止索引（但不包含终止索引）</span><br><span class="line">    * 步长是切片每次获取完当前索引后移动的方向（±）和偏移量（数值）</span><br><span class="line">    1）没有步长，相当于取值完成后向后移动一个索引的位置（默认为1）</span><br><span class="line">    2）当步长为正整数时，取正向切片：</span><br><span class="line">  步长默认值为1，开始索引默认值为0，结束索引的默认值为len(s)</span><br><span class="line">    3）当步长为负整数时，取反向切片：</span><br><span class="line">   反向切片时，默认的起始位置为最后一个元素，默认终止位置为第一个元素的前一个位置</span><br><span class="line"></span><br><span class="line">5. 举例</span><br><span class="line">```ipython</span><br><span class="line">In [31]: s</span><br><span class="line">Out[31]: &apos;So beatiful a girl.&apos;</span><br><span class="line"></span><br><span class="line">In [32]: s[:]</span><br><span class="line">Out[32]: &apos;So beatiful a girl.&apos;</span><br><span class="line"></span><br><span class="line">In [33]: s[:2]</span><br><span class="line">Out[33]: &apos;So&apos;</span><br><span class="line"></span><br><span class="line">In [34]: s[-2:-4]</span><br><span class="line">Out[34]: &apos;&apos;</span><br><span class="line"></span><br><span class="line">In [35]: s[-2:-4:-1]</span><br><span class="line">Out[35]: &apos;lr&apos;</span><br><span class="line"></span><br><span class="line">In [36]: s[-5:-1]</span><br><span class="line">Out[36]: &apos;girl&apos;</span><br><span class="line"></span><br><span class="line">In [37]: s[-1:-5]</span><br><span class="line">Out[37]: &apos;&apos;</span><br><span class="line"></span><br><span class="line">In [38]: s[-1:-5:-1]</span><br><span class="line">Out[38]: &apos;.lri&apos;</span><br><span class="line"></span><br><span class="line">In [39]: s[-2:-6:-1]</span><br><span class="line">Out[39]: &apos;lrig&apos;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="5-与字符串相关的一些方法"><a href="#5-与字符串相关的一些方法" class="headerlink" title="5. 与字符串相关的一些方法"></a>5. 与字符串相关的一些方法</h3><br>
+
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>len(s)</td>
+<td>返回序列的长度</td>
+</tr>
+<tr>
+<td>max(s)</td>
+<td>返回序列的最大值元素， 字符串比较ASCII码</td>
+</tr>
+<tr>
+<td>min(s)</td>
+<td>返回序列的最小值元素</td>
+</tr>
+<tr>
+<td>str(x )</td>
+<td>字符串的创建函数, 将对象 x 转换为字符串</td>
+</tr>
+<tr>
+<td>repr(x )</td>
+<td>将对象 x 转换为表达式字符串</td>
+</tr>
+<tr>
+<td>eval(str )</td>
+<td>用来计算在字符串中的有效Python表达式,并返回一个对象</td>
+</tr>
+<tr>
+<td>chr(x )</td>
+<td>将一个整数转换为一个字符</td>
+</tr>
+<tr>
+<td>unichr(x )</td>
+<td>将一个整数转换为Unicode字符</td>
+</tr>
+<tr>
+<td>ord(x )</td>
+<td>将一个字符转换为它的整数值</td>
+</tr>
+<tr>
+<td>hex(x )</td>
+<td>将一个整数转换为一个十六进制字符串</td>
+</tr>
+<tr>
+<td>oct(x )</td>
+<td>将一个整数转换为一个八进制字符串</td>
+</tr>
+</tbody></table>
+<br>
+
+<h3 id="6-字符串常用方法"><a href="#6-字符串常用方法" class="headerlink" title="6. 字符串常用方法"></a>6. 字符串常用方法</h3><br>
+
+<blockquote>
+<p>查看方法：</p>
+<figure class="highlight ipython"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; In [<span class="number">50</span>]: s = <span class="string">"hello"</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;In [<span class="number">51</span>]: dir(s)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>常用方法</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S.split(sep=None, maxsplit=-1)</td>
+<td>用于字符串分割</td>
+</tr>
+<tr>
+<td>S.strip([chars])</td>
+<td>去掉字符串两边空格</td>
+</tr>
+<tr>
+<td>S.join(iterable)</td>
+<td>组合序列中的字符串</td>
+</tr>
+<tr>
+<td>S.lower()</td>
+<td>字符串转为小写字母</td>
+</tr>
+<tr>
+<td>S.index(sub[, start[, end]])</td>
+<td>查找字符的索引</td>
+</tr>
+<tr>
+<td>S.replace(old, new[, count])</td>
+<td>替换字符串中的元素</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/python-字符串，-变量类型/" rel="tag"># python, 字符串， 变量类型</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/22/pytorch1-2-0下使用目标检测模型训练报错-RuntimeError-received-0-items-of-ancdata-解决办法/" rel="next" title="pytorch1.2.0下使用目标检测模型训练报错'RuntimeError: received 0 items of ancdata'解决办法">
+                <i class="fa fa-chevron-left"></i> pytorch1.2.0下使用目标检测模型训练报错'RuntimeError: received 0 items of ancdata'解决办法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+  <p class="site-author-name" itemprop="name">Gantom</p>
+  <div class="site-description motion-element" itemprop="description">Gantom's personal blog</div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span>
+        
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">tags</span>
+        
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/mirocle007" title="GitHub &rarr; https://github.com/mirocle007" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:gantom@foxmail.com" title="E-Mail &rarr; mailto:gantom@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-简介"><span class="nav-number">1.</span> <span class="nav-text">1. 简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-字符串变量的运算"><span class="nav-number">2.</span> <span class="nav-text">2. 字符串变量的运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-字符串变量的比较"><span class="nav-number">3.</span> <span class="nav-text">3. 字符串变量的比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-字符串的索引和切片"><span class="nav-number">4.</span> <span class="nav-text">4. 字符串的索引和切片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-与字符串相关的一些方法"><span class="nav-number">5.</span> <span class="nav-text">5. 与字符串相关的一些方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-字符串常用方法"><span class="nav-number">6.</span> <span class="nav-text">6. 字符串常用方法</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gantom</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+  
+  
+  <script size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

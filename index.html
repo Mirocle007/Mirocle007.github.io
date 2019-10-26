@@ -261,7 +261,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">14</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">15</span></a>
 
   </li>
 
@@ -300,6 +300,345 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mirocle007.com/2019/10/26/python变量类型——字符串/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gantom">
+      <meta itemprop="description" content="Gantom's personal blog">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gantom's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/10/26/python变量类型——字符串/" class="post-title-link" itemprop="url">python变量类型——字符串</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-10-26 16:54:16 / Modified: 16:57:54" itemprop="dateCreated datePublished" datetime="2019-10-26T16:54:16+08:00">2019-10-26</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python教程/" itemprop="url" rel="index"><span itemprop="name">Python教程</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h3><p>Python 字符串类型用于存储字符串变量，字符串一般使用单引号 <code>‘</code> 或者双引号 <code>“</code> 来表示。如:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">s1 = <span class="string">'hello, world'</span></span><br><span class="line">s2 = <span class="string">"hello, world"</span></span><br><span class="line">s3 = <span class="string">'''hello, world'''</span></span><br><span class="line">s4 = <span class="string">"""hello, world"""</span></span><br><span class="line">print(s1)  <span class="comment"># 4种方式等效， 多行字符串会用到三引号的情况</span></span><br><span class="line">print(s2)</span><br><span class="line">print(s3)</span><br><span class="line">print(s4)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>注意， 单引号字符串中只能使用双引号作为引号， 而不能使用单引号， 否则python会将第二个单引号当成字符串的结束， 从而报错， 反之亦然。</strong></li>
+<li>如果一定要用， 则需使用转义字符 <code>\</code></li>
+</ul>
+<br>
+
+<h3 id="2-字符串变量的运算"><a href="#2-字符串变量的运算" class="headerlink" title="2. 字符串变量的运算"></a>2. 字符串变量的运算</h3><br>
+
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>作用</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>字符串拼接</td>
+<td><code>x=&quot;ABC&quot;+&#39;DEF;y=&quot;123&quot;;z=x+y</code></td>
+</tr>
+<tr>
+<td>+=</td>
+<td>复合赋值, y += “a” 相当于 y = y + “a”</td>
+<td><code>z += &quot;asdfg&quot;</code></td>
+</tr>
+<tr>
+<td>*</td>
+<td>生成重复的字符串</td>
+<td><code>z = z * 3</code></td>
+</tr>
+<tr>
+<td>*=</td>
+<td>复合赋值， y*=2 相当于y = y * 2</td>
+<td><code>z *= 3</code></td>
+</tr>
+</tbody></table>
+<br>
+
+<h3 id="3-字符串变量的比较"><a href="#3-字符串变量的比较" class="headerlink" title="3. 字符串变量的比较"></a>3. 字符串变量的比较</h3><br>
+
+<blockquote>
+<p><strong>字符串比较， 比较的是ASCII码</strong><br>简单举例如下：</p>
+<figure class="highlight ipython"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&gt; In [<span class="number">12</span>]: <span class="string">"A"</span> == <span class="string">'A'</span></span><br><span class="line">&gt;Out[<span class="number">12</span>]: <span class="literal">True</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;In [<span class="number">13</span>]: <span class="string">'A'</span> &lt; <span class="string">'B'</span></span><br><span class="line">&gt;Out[<span class="number">13</span>]: <span class="literal">True</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;In [<span class="number">14</span>]: <span class="string">"ABC"</span> &gt; <span class="string">"ABB"</span>  <span class="comment"># 从左往右，分别比较，直到第一个不相同的，完成比较</span></span><br><span class="line">&gt;Out[<span class="number">14</span>]: <span class="literal">True</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;In [<span class="number">16</span>]: <span class="string">"ADC"</span> &lt; <span class="string">"ABC"</span></span><br><span class="line">&gt;Out[<span class="number">16</span>]: <span class="literal">False</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;In [<span class="number">17</span>]: <span class="string">"AD"</span> &gt; <span class="string">"ABC"</span></span><br><span class="line">&gt;Out[<span class="number">17</span>]: <span class="literal">True</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;In [<span class="number">19</span>]: <span class="string">"AB"</span> &gt; <span class="string">"ABC"</span>  <span class="comment"># 空值的ASCII码最小</span></span><br><span class="line">&gt;Out[<span class="number">19</span>]: <span class="literal">False</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;In [<span class="number">20</span>]: <span class="string">"ABCD"</span> != <span class="string">"DCBA"</span></span><br><span class="line">&gt;Out[<span class="number">20</span>]: <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<br>
+
+<h3 id="4-字符串的索引和切片"><a href="#4-字符串的索引和切片" class="headerlink" title="4. 字符串的索引和切片"></a>4. 字符串的索引和切片</h3><br>
+
+<ul>
+<li>索引</li>
+</ul>
+<ol>
+<li>定义： 简单地说就是对字符串的单个元素进行取值。</li>
+<li>语法： 字符串[整数表达式]</li>
+<li>说明：<ul>
+<li>Python序列都可以用索引（Index）来访问序列中的对象</li>
+<li>Python序列正向的索引从0开始，第二个索引为1，最后一个索引为len(s)-1</li>
+<li>索引从-1开始，-1代表最后一个，-2代表倒数第二个，以此类推，第一个是-len(s)</li>
+</ul>
+</li>
+<li>举例<figure class="highlight ipython"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">25</span>]: s = <span class="string">"So beatiful a girl."</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">26</span>]: s[<span class="number">0</span>]</span><br><span class="line">Out[<span class="number">26</span>]: <span class="string">'S'</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">27</span>]: s[<span class="number">-1</span>]</span><br><span class="line">Out[<span class="number">27</span>]: <span class="string">'.'</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<br>
+
+<ul>
+<li>切片</li>
+</ul>
+<ol>
+<li><p>定义： 简单地说就是对字符串的多个元素进行取值。</p>
+</li>
+<li><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">   注意： 小括号内的可以省略</span><br><span class="line"></span><br><span class="line">3. 说明：</span><br><span class="line">    *  开始索引是切片开始切下的位置，0代表第一个元素，-1代表最后一个元素</span><br><span class="line">    * 结束索引是切片的终止索引（但不包含终止索引）</span><br><span class="line">    * 步长是切片每次获取完当前索引后移动的方向（±）和偏移量（数值）</span><br><span class="line">    1）没有步长，相当于取值完成后向后移动一个索引的位置（默认为1）</span><br><span class="line">    2）当步长为正整数时，取正向切片：</span><br><span class="line">  步长默认值为1，开始索引默认值为0，结束索引的默认值为len(s)</span><br><span class="line">    3）当步长为负整数时，取反向切片：</span><br><span class="line">   反向切片时，默认的起始位置为最后一个元素，默认终止位置为第一个元素的前一个位置</span><br><span class="line"></span><br><span class="line">5. 举例</span><br><span class="line">```ipython</span><br><span class="line">In [31]: s</span><br><span class="line">Out[31]: &apos;So beatiful a girl.&apos;</span><br><span class="line"></span><br><span class="line">In [32]: s[:]</span><br><span class="line">Out[32]: &apos;So beatiful a girl.&apos;</span><br><span class="line"></span><br><span class="line">In [33]: s[:2]</span><br><span class="line">Out[33]: &apos;So&apos;</span><br><span class="line"></span><br><span class="line">In [34]: s[-2:-4]</span><br><span class="line">Out[34]: &apos;&apos;</span><br><span class="line"></span><br><span class="line">In [35]: s[-2:-4:-1]</span><br><span class="line">Out[35]: &apos;lr&apos;</span><br><span class="line"></span><br><span class="line">In [36]: s[-5:-1]</span><br><span class="line">Out[36]: &apos;girl&apos;</span><br><span class="line"></span><br><span class="line">In [37]: s[-1:-5]</span><br><span class="line">Out[37]: &apos;&apos;</span><br><span class="line"></span><br><span class="line">In [38]: s[-1:-5:-1]</span><br><span class="line">Out[38]: &apos;.lri&apos;</span><br><span class="line"></span><br><span class="line">In [39]: s[-2:-6:-1]</span><br><span class="line">Out[39]: &apos;lrig&apos;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="5-与字符串相关的一些方法"><a href="#5-与字符串相关的一些方法" class="headerlink" title="5. 与字符串相关的一些方法"></a>5. 与字符串相关的一些方法</h3><br>
+
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>len(s)</td>
+<td>返回序列的长度</td>
+</tr>
+<tr>
+<td>max(s)</td>
+<td>返回序列的最大值元素， 字符串比较ASCII码</td>
+</tr>
+<tr>
+<td>min(s)</td>
+<td>返回序列的最小值元素</td>
+</tr>
+<tr>
+<td>str(x )</td>
+<td>字符串的创建函数, 将对象 x 转换为字符串</td>
+</tr>
+<tr>
+<td>repr(x )</td>
+<td>将对象 x 转换为表达式字符串</td>
+</tr>
+<tr>
+<td>eval(str )</td>
+<td>用来计算在字符串中的有效Python表达式,并返回一个对象</td>
+</tr>
+<tr>
+<td>chr(x )</td>
+<td>将一个整数转换为一个字符</td>
+</tr>
+<tr>
+<td>unichr(x )</td>
+<td>将一个整数转换为Unicode字符</td>
+</tr>
+<tr>
+<td>ord(x )</td>
+<td>将一个字符转换为它的整数值</td>
+</tr>
+<tr>
+<td>hex(x )</td>
+<td>将一个整数转换为一个十六进制字符串</td>
+</tr>
+<tr>
+<td>oct(x )</td>
+<td>将一个整数转换为一个八进制字符串</td>
+</tr>
+</tbody></table>
+<br>
+
+<h3 id="6-字符串常用方法"><a href="#6-字符串常用方法" class="headerlink" title="6. 字符串常用方法"></a>6. 字符串常用方法</h3><br>
+
+<blockquote>
+<p>查看方法：</p>
+<figure class="highlight ipython"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; In [<span class="number">50</span>]: s = <span class="string">"hello"</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;In [<span class="number">51</span>]: dir(s)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>常用方法</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S.split(sep=None, maxsplit=-1)</td>
+<td>用于字符串分割</td>
+</tr>
+<tr>
+<td>S.strip([chars])</td>
+<td>去掉字符串两边空格</td>
+</tr>
+<tr>
+<td>S.join(iterable)</td>
+<td>组合序列中的字符串</td>
+</tr>
+<tr>
+<td>S.lower()</td>
+<td>字符串转为小写字母</td>
+</tr>
+<tr>
+<td>S.index(sub[, start[, end]])</td>
+<td>查找字符的索引</td>
+</tr>
+<tr>
+<td>S.replace(old, new[, count])</td>
+<td>替换字符串中的元素</td>
+</tr>
+</tbody></table>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -2495,207 +2834,6 @@ end: 输出完毕吧后在末尾自动追加一个字符串，默认为\n</code>
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://mirocle007.com/2019/09/17/Python基础（1）——简介、安装及运行/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Gantom">
-      <meta itemprop="description" content="Gantom's personal blog">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gantom's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/09/17/Python基础（1）——简介、安装及运行/" class="post-title-link" itemprop="url">Python基础（1）——简介、安装及运行</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-09-17 20:17:51 / Modified: 20:28:12" itemprop="dateCreated datePublished" datetime="2019-09-17T20:17:51+08:00">2019-09-17</time>
-            </span>
-          
-
-          
-            
-
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python教程/" itemprop="url" rel="index"><span itemprop="name">Python教程</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>Python 简介</p>
-<ol>
-<li>创始人：Guido van Rossum（荷兰人，人称gui叔）</li>
-<li>创始时间：1989圣诞节期间</li>
-<li>Python的命名：源于一个喜剧团，monty python（Guido 为粉丝）</li>
-<li>应用领域：系统运维、网络编程、科学计算、人工智能、机器人、web开发、大数据及数据库编程、云计算、教育、游戏、图像、其他</li>
-<li>优点：面向对象（Java，C++,Python）、免费、可移植（可以在不同平台上运行）、可混合编程（C/‘C++/Java/.net)、简单易学易用、应用领域广泛、开发效率高、开源</li>
-<li>缺点：与C/C++相比执行速度不够快、不能封闭源代码</li>
-<li>官网：<a href="http://www.python.org" target="_blank" rel="noopener">www.python.org</a></li>
-<li>版本：v2.7(2020 前结束维护）、v3.6.7（后续演示版本）、v3.7（最新版本）(下载页面见 <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a>)</li>
-</ol>
-</li>
-<li><p>安装</p>
-<ol>
-<li>windows 平台：双击下载的 exe 文件，根据提示进行操作，注意要勾选安装pip以及添加环境变量。还有安装的路径尽可能选择默认路径，曾经试过选择其他路径后，使用 pip 时有一个 bug。</li>
-<li>Linux平台：默认已经安装了 python2, 所以我们需要另外安装python3, 最简单的安装方式为使用终端命令：<code>sudo apt-get install python3.6</code>，其他安装方式可以参考：<a href="https://blog.csdn.net/huanhuanq1209/article/details/72673236" target="_blank" rel="noopener">https://blog.csdn.net/huanhuanq1209/article/details/72673236</a></li>
-</ol>
-</li>
-<li><p>运行<br>  后续的展示和例子均基于 Ubuntu18.04和python3.6.7, 所以这里只对该条件下的Python运行方式进行说明。</p>
-<ul>
-<li>方法一：$ python3 hello.py (其中$表示终端中运行， hello.py表示当前文件夹下的python文件)</li>
-<li>方法二：在 python 文件(此处是hello.py)的第一行写入：<code>#!/usr/bin/python3</code>，保存后在终端执行<code>chmod u+x hello.py</code>增加文件的执行权限， 然后终端中直接运行<code>./hello.py</code>则可运行hello.py文件</li>
-<li>方法三：在交互式模式下执行， 在终端输入命令<code>python</code>(也可以通过sudo apt install ipython安装ipython, 然后使用命令<code>ipython</code>进入更美观的交互式界面)。需注意的是， 交互式模式下每编辑完一条语句便执行一条语句，无法全部编辑完后再执行，所以交互式模式一般用来调试用，真正写代码一般用编辑器写。退出交互模式使用Ctrl+D或者exit( )或者quit( )。</li>
-</ul>
-</li>
-<li><p>Python程序的组成</p>
-<ul>
-<li>程序由模块组成；</li>
-<li>模块由语句、函数、类、数据等组成；</li>
-<li>语句包含表达式；</li>
-<li>表达式建立并处理数据对象</li>
-</ul>
-</li>
-<li><p>Python注释<br> 以#开头，直至行尾</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2743,7 +2881,7 @@ end: 输出完毕吧后在末尾自动追加一个字符串，默认为\n</code>
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -2803,7 +2941,9 @@ end: 输出完毕吧后在末尾自动追加一个字符串，默认为\n</code>
         
           
         
-        <span class="site-state-item-count">13</span>
+          
+        
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">tags</span>
         
       </div>
